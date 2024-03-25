@@ -3,15 +3,27 @@
 
 在solana中合约分为两个部分程序和账户。
 
+# 构建Solana程序
 ```
 anchor build 
-
+```
+# 部署Solana 程序
+```
+acnhor  deploy
+```
+#启动Solana本地集群
+```
 anchor test --skip-local-validator
-
+```
+# 查看程序执行状况的log
+```
 ls .anchor/program-logs/
 ```
-
 # 跳过本地部署和启动solana节点直接运行测试代码
 ```
 anchor test --skip-local-validator --skip-deploy
+```
+# 重置Solana 集群命令
+```
+solana-test-validator --reset
 ```

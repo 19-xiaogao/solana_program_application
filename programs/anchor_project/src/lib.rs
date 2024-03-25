@@ -2,7 +2,6 @@ use anchor_lang::prelude::*;
 use std::mem::size_of;
 declare_id!("86vnDcApQeFMx8i4vKt2pRQHWb7ZtbLL1ppRxP1hcWdu");
 
-
 #[program]
 pub mod anchor_project {
     use super::*;
@@ -16,21 +15,21 @@ pub mod anchor_project {
     }
 }
 
-
+// 通过程序派生出来的账户
 #[derive(Accounts)]
 #[instruction(key: u64)]
 pub struct Initialize<'info> {
-
     #[account(init,
               payer = signer,
               space = size_of::<Val>() + 8,
+              // 用来推断地址
               seeds=[&key.to_le_bytes().as_ref()],
               bump)]
     val: Account<'info, Val>,
-    
+
     #[account(mut)]
     signer: Signer<'info>,
-    
+
     system_program: Program<'info, System>,
 }
 
