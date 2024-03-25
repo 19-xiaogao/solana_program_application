@@ -1,0 +1,17 @@
+
+在solana程序没有构造函数,没有不可变量,没有delegatecall 程序可以更新直接部署。
+
+在solana中合约分为两个部分程序和账户。
+
+```
+anchor build 
+
+anchor test --skip-local-validator
+
+ls .anchor/program-logs/
+```
+
+# 跳过本地部署和启动solana节点直接运行测试代码
+```
+anchor test --skip-local-validator --skip-deploy
+```

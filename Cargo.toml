@@ -4,6 +4,7 @@ members = [
 ]
 
 [profile.release]
+# 检查算术溢出
 overflow-checks = true
 lto = "fat"
 codegen-units = 1
