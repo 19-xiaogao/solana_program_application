@@ -27,3 +27,8 @@ anchor test --skip-local-validator --skip-deploy
 ```
 solana-test-validator --reset
 ```
+
+# 设置编译Solana的程序版本
+```
+cargo update -p solana-program --precise 1.17.17
+```
